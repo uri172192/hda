@@ -1,5 +1,6 @@
 import streamlit as st 
-st.set_page_config(layout="wide")
+# Configura el título de la página i favicon
+st.set_page_config(page_title="Shooting Similarity", page_icon="detective.png", layout="wide")
 st.title('🕵️Similitud Jugadores')
 st.subheader('📌Descubre los jugadores más similares entre si respecto a su eficacia en el lanzamiento en la Liga Asobal.')
 
