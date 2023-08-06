@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(layout="wide")
+# Configura el título de la página i favicon
+st.set_page_config(page_title="Data Consulting", page_icon="folder.png", layout="wide")
 st.title("🗂️Data Consulting")
 
 st.subheader('📌Players Data')
