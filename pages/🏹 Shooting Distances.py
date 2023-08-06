@@ -362,7 +362,7 @@ expander.write("**Lx%** = Porcentaje de acierto en el lanzamiento según distanc
 
 st.divider()
 
-dfteams = pd.read_excel("DatasetEquiposAsobal.xlsx")
+dfequipos = pd.read_excel("DatasetEquiposAsobal.xlsx")
 
 
 st.subheader("📌Consulta los datos sobre el porcentaje de acierto en el lanzamiento de equipo, según la distancia de cada uno.")
