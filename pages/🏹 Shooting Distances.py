@@ -6,7 +6,8 @@ import plotly.graph_objects as go
 import altair as alt
 from vega_datasets import data
 
-st.set_page_config(layout="wide")
+# Configura el título de la página i favicon
+st.set_page_config(page_title="Shooting Distances", page_icon="arrow.png", layout="wide")
 st.title('🏹Shooting Distances')
 
 
