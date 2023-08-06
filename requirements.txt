@@ -1,0 +1,10 @@
+streamlit
+altair
+pandas
+numpy
+vega_datasets
+matplotlib.colors
+matplotlib
+plotly
+PCA
+StandardScaler
