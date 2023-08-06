@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(layout="wide")
+# Configura el título de la página i favicon
+st.set_page_config(page_title="Snapshot Asobal", page_icon="clipboard.png", layout="wide")
 st.title("📋Efficiency Snapshot Asobal")
 st.subheader('📌Como han rendido los equipos de la liga Asobal durante la temporada 22-23?')
 
