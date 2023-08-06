@@ -7,7 +7,8 @@ import altair as alt
 from vega_datasets import data
 import matplotlib.colors as mcolors
 
-st.set_page_config(layout="wide")
+# Configura el título de la página i favicon
+st.set_page_config(page_title="Scorers", page_icon="ball.png", layout="wide")
 st.title('🏐Scorers')
 st.header('🎯Goleadores Asobal')
 st.subheader('📌Consulta todos los goleadores según **equipo**:')
