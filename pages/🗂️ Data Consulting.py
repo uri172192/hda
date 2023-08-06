@@ -7,9 +7,9 @@ st.title("🗂️Data Consulting")
 st.subheader('📌Players Data')
 st.write('Consulta datos jugadores Asobal 22/23:')
 ## Df Load
-df_jugadores = pd.read_excel("DatasetJugadoresAsobal.xlsx")
+df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
 
-## Get the list of countries
+## Get the list of teams
 Equipos = df['Equipo'].unique()
  
 ## Create the select box
