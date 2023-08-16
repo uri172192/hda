@@ -92,12 +92,13 @@ for col in categories:
         axis=1
     )
 
-# Mostrar la tabla con estilos CSS
-st.markdown(
-    table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render(),
-    unsafe_allow_html=True
-)
-
+try:
+    st.markdown(
+        table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render(),
+        unsafe_allow_html=True
+    )
+except Exception as e:
+    st.error(f"Error al mostrar la tabla: {e}")
 # Resto del código ...
 
 st.divider()
