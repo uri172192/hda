@@ -13,7 +13,7 @@ df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
 st.title('🎯Players Shooting Performance')
 
 # Título de la sección
-st.header('📌Comparador de Jugadores')
+st.subheader('📌Comparador de Jugadores')
 
 # Generar una clave única para el widget multiselect
 player_selection_key = "player_selection"
