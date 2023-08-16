@@ -3,8 +3,11 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
 
+# Configura el título de la página i favicon
+st.set_page_config(page_title="Players Shooting Performance", page_icon="punteria.png", layout="wide")
+
 # Cargar el DataFrame desde el archivo Excel
-df = pd.read_excel(r"C:\Users\Lenovo\Downloads\datapps\pages\DatasetJugadoresAsobal.xlsx")
+df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
 
 # Título de la página
 st.title('🎯Players Shooting Performance')
