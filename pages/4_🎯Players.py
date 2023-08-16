@@ -97,7 +97,8 @@ try:
 styled_table_df = table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories])
 
 # Mostrar la tabla con estilos CSS
-st.dataframe(styled_table_df, unsafe_allow_html=True)
+st.write(styled_table_df, unsafe_allow_html=True)
+
 except Exception as e:
     st.error(f"Error al mostrar la tabla: {e}")
 # Resto del código ...
