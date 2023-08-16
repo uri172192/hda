@@ -93,11 +93,19 @@ for col in categories:
     )
 
 try:
+# ... Código previo ...
+
 # Aplicar estilo a las celdas con los valores más altos en el DataFrame
-styled_table_df = table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories])
+styled_table_df = table_df.style.applymap(
+    lambda x: high_value_style if '⬆️' in str(x) else '',
+    subset=pd.IndexSlice[:, categories]
+)
 
 # Mostrar la tabla con estilos CSS
 st.write(styled_table_df, unsafe_allow_html=True)
+
+# Resto del código ...
+
 
 except Exception as e:
     st.error(f"Error al mostrar la tabla: {e}")
@@ -186,11 +194,19 @@ for col in categories:
     )
 
 try:
+# ... Código previo ...
+
 # Aplicar estilo a las celdas con los valores más altos en el DataFrame
-styled_table_df = table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories])
+styled_table_df = table_df.style.applymap(
+    lambda x: high_value_style if '⬆️' in str(x) else '',
+    subset=pd.IndexSlice[:, categories]
+)
 
 # Mostrar la tabla con estilos CSS
 st.write(styled_table_df, unsafe_allow_html=True)
+
+# Resto del código ...
+
 
 except Exception as e:
     st.error(f"Error al mostrar la tabla: {e}")
