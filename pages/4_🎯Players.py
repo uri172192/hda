@@ -185,8 +185,6 @@ for col in categories:
         lambda row: f"{row[col]} ⬆️" if row[col] == max_value else row[col],
         axis=1
     )
-
-try:
 # ... Código previo ...
 
 # Aplicar estilo a las celdas con los valores más altos en el DataFrame
@@ -198,11 +196,6 @@ styled_table_df = table_df.style.applymap(
 # Mostrar la tabla con estilos CSS
 st.write(styled_table_df, unsafe_allow_html=True)
 
-# Resto del código ...
-
-
-except Exception as e:
-    st.error(f"Error al mostrar la tabla: {e}")
 # Resto del código ...
 
 st.divider()
