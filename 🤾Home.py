@@ -2,12 +2,24 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+from io import BytesIO
+
+def main():
+    # Configurar la página
+    st.set_page_config(page_title="HDA", page_icon="playerhda.png", layout="wide")
+
+    # Descargar la imagen desde la URL
+    image_url = "https://github.com/uri172192/hda/blob/master/HDA%20SENS%20FONS.png?raw=true"
+    response = requests.get(image_url)
+    image = Image.open(BytesIO(response.content))
+
+    # Mostrar la imagen en la barra lateral
+    st.sidebar.image(image, use_column_width=True)
+
 
 # Configura el título de la página i favicon
-st.set_page_config(page_title="HDA", page_icon="playerhda.png", layout="wide")
+
 st.title('HDA🤾‍♂️📊')
-image = Image.open('C:/Users/Lenovo/Downloads/hda/HDA SENS FONS.png')
-st.image(image)
 
 st.divider()
 
