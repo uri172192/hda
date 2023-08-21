@@ -2,29 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-def add_logo():
-    st.markdown(
-        """
-        <style>
-            [data-testid="stSidebarNav"] {
-                background-image: url(https://github.com/uri172192/hda/blob/master/HDA%20SENS%20FONS.png?raw=true);
-                background-repeat: no-repeat;
-                padding-top: 120px;
-                background-position: 20px 20px;
-            }
-            [data-testid="stSidebarNav"]::before {
-                content: "My Company Name";
-                margin-left: 20px;
-                margin-top: 20px;
-                font-size: 30px;
-                position: relative;
-                top: 100px;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
 # Configura el título de la página i favicon
 st.set_page_config(page_title="HDA", page_icon="playerhda.png", layout="wide")
 st.title('HDA🤾‍♂️📊')
