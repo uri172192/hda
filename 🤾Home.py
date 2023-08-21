@@ -15,10 +15,11 @@ def main():
 
     # Mostrar la imagen en la barra lateral
     st.sidebar.image(image, use_column_width=True)
-
+    
+if __name__ == "__main__":
+    main()
 
 # Configura el título de la página i favicon
-
 st.title('HDA🤾‍♂️📊')
 
 st.divider()
