@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from PIL import Image
 
 # Configura el título de la página i favicon
 st.set_page_config(page_title="HDA", page_icon="playerhda.png", layout="wide")
