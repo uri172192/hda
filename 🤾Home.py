@@ -14,6 +14,21 @@ def main():
     response = requests.get(image_url)
     image = Image.open(BytesIO(response.content))
 
+    # Usar CSS personalizado para colocar la imagen encima del menú en la barra lateral
+    sidebar_style = """
+    <style>
+    .sidebar .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar .sidebar-content .stImage {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    </style>
+    """
+
     # Mostrar la imagen en la barra lateral
     st.sidebar.image(image, use_column_width=True)
     
