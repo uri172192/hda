@@ -6,7 +6,7 @@ from PIL import Image
 # Configura el título de la página i favicon
 st.set_page_config(page_title="HDA", page_icon="playerhda.png", layout="wide")
 st.title('HDA🤾‍♂️📊')
-image = Image.open('C:\Users\Lenovo\Downloads\hda\HDA SENS FONS.png')
+image = Image.open('C:/Users/Lenovo/Downloads/hda/HDA SENS FONS.png')
 st.image(image)
 
 st.divider()
