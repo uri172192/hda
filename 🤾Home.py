@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 #-----------------------------------------------
-st.set_page_config(page_title="Shooting Distances", page_icon="arrow.png", layout="wide")
+st.set_page_config(page_title="HDL", page_icon="favicon-16x16.png", layout="wide")
 st.title('HDL)
 image = Image.open('HDL-blanc.png')
 
