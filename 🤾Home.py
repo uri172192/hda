@@ -5,7 +5,7 @@ from PIL import Image
 
 #-----------------------------------------------
 st.set_page_config(layout="wide")
-image = Image.open(r'C:\Users\Lenovo\Downloads\datapps\pages\HDA SENS FONS.png')
+image = Image.open('HDL-blanc.png')
 
 
 
