@@ -7,14 +7,18 @@ from PIL import Image
 st.set_page_config(layout="wide")
 image = Image.open('HDL-blanc.png')
 
+
+
 col1, col2 = st.columns(2)
 
 with col1:
+    st.image(image)
+    
+with col2:
+
     st.subheader('📌Descripción HDA')
     st.write('📢**Handball Data Analytics** se presenta como una aplicación destinada al desarrollo y democratización del análisis de datos en balonmano. La finalidad es ayudar a los usarios a **disfrutar, comprender y compartir los datos sobre el balonmano**.')
-
-
-with col2:
+    
     st.divider()
 
     st.subheader("📌Contenidos HDA")
@@ -26,4 +30,3 @@ with col2:
     st.write("🗂️**Data Consulting**: consulta los datos de los que disponemos sobre cada equipo en materia de lanzamientos")
 
     st.divider()
-
