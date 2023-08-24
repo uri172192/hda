@@ -16,12 +16,12 @@ with col1:
     
 with col2:
 
-    st.subheader('📌Descripción HDA')
-    st.write('📢**Handball Data Analytics** se presenta como una aplicación destinada al desarrollo y democratización del análisis de datos en balonmano. La finalidad es ayudar a los usarios a **disfrutar, comprender y compartir los datos sobre el balonmano**.')
+    st.subheader('📌Descripción HDL')
+    st.write('📢**Handball Data Lab** se presenta como una aplicación destinada al desarrollo y democratización del análisis de datos en balonmano. La finalidad es ayudar a los usarios a **disfrutar, comprender y compartir los datos sobre el balonmano**.')
     
     st.divider()
 
-    st.subheader("📌Contenidos HDA")
+    st.subheader("📌Contenidos HDL")
     st.write("🏐**Scorers**: visualiza los goleadores según equipo y posición")
     st.write("🏹**Shooting Distances**: explora los máximos anotadores según la distancia del lanzamiento")
     st.write("🎯**Players Shooting Performance**: escoge 2 jugadores y compara su rendimiento en el lanzamiento")
