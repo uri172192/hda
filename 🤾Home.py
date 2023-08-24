@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 #-----------------------------------------------
-st.set_page_config(page_title="HDL", page_icon="favicon-16x16.png", layout="wide")
+st.set_page_config(page_title="HDL", page_icon="favicon-32x32.png", layout="wide")
 image = Image.open('HDL-blanc.png')
 
 
