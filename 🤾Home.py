@@ -7,7 +7,7 @@ from PIL import Image
 st.set_page_config(page_title="HDL", page_icon="favicon-32x32.png", layout="wide")
 
 image = Image.open('HDL-blanc.png')
-st.image(image, use_column_width=True) 
+st.image(image) 
     
 
 
