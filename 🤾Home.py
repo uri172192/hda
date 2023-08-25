@@ -5,19 +5,10 @@ from PIL import Image
 
 #-----------------------------------------------
 st.set_page_config(page_title="HDL", page_icon="favicon-32x32.png", layout="wide")
-# Crear dos columnas, la primera para el margen izquierdo, la segunda para el contenido centrado
-col1, col2 = st.beta_columns([1, 3])
 
-# Centrar el título en la columna de contenido
-with col2:
-    st.title('Handball Data Lab')
-
-# Cargar la imagen
+st.title('Handball Data Lab')
 image = Image.open('HDL-blanc.png')
-
-# Centrar la imagen en la columna de contenido
-with col2:
-    st.image(image, use_column_width=True)  # Esto ajustará la imagen al ancho de la columna
+st.image(image, use_column_width=True) 
     
 
 
