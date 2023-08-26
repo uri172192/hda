@@ -34,7 +34,7 @@ fig.update_traces(hoverlabel_namelength=0)
 # Mostrar el gráfico en Streamlit
 st.plotly_chart(fig)
 
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Fuente: Handball Data Lab")
 st.caption("🔎Ratings: Ajustado por 50 posesiones")
 
 st.divider()
@@ -49,7 +49,7 @@ def round_table_values(df):
     return rounded_df
 df_rounded = round_table_values(dfteams)
 st.write(df_rounded)
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Fuente: Handball Data Lab")
 
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**Equipo** = Nombre del equipo")
@@ -61,7 +61,7 @@ expander.write("**DefRt** = Defensive Rating, eficiencia defensiva")
 expander.write("**DefRt** = Defensive Rating, eficiencia defensiva")
 expander.write("**OffRt** = Offensive Rating, eficiencia ofensiva")
 expander.write("**NetRt** = Net Rating, diferencia entre eficiencia ofensiva y defensiva")
-expander.write("**Pace** = ritmo de juego, número de posesiones por partido")
+expander.write("**Pace** = Ritmo de juego, número de posesiones por partido")
 expander.write("**LxGTeam** = Nombre goles anotados por un equipo desde una distancia concreta durante la temproada")
 expander.write("**LxSTeam** = Nombre lanzamientos intentados por un equipo desde una distancia concreta durante la temproada")
 expander.write("**LxPTeam** = Porcentaje de acierto en el lanzamiento de un equipo desde una distancia concreta durante la temproada")
