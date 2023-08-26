@@ -23,3 +23,6 @@ st.write("📋**Efficiency Snapshot Asobal**: conoce como han rendido los equipo
 st.write("🕵️**Shooting Similiraty**: descubre los jugadores similares entre si según su eficacia en el lanzamiento")
 st.write("🗂️**Data Consulting**: consulta los datos de los que disponemos sobre cada equipo en materia de lanzamientos")
 st.divider()
+
+
+google-site-verification: google920572b540af7681.html
