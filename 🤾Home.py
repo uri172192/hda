@@ -4,13 +4,10 @@ import numpy as np
 from PIL import Image
 
 #-----------------------------------------------
-image = Image.open('HDL-blanc.png')
-st.sidebar.image(image) 
-
 st.set_page_config(page_title="HDL", page_icon="favicon-32x32.png", layout="wide")
 
-
-
+image = Image.open('HDL-blanc.png')
+st.image(image) 
 
 st.subheader('📌Descripción HDL')
 st.write('📢**Handball Data Lab** se presenta como una aplicación destinada al desarrollo y democratización del análisis de datos en balonmano. La finalidad es ayudar a los usarios a **disfrutar, comprender y compartir los datos sobre el balonmano**.')
