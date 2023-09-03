@@ -22,7 +22,7 @@ filtered_data = df[df['Equipo'] == selected_team]
 ## Display the filtered data
 st.write(filtered_data)
 
-st.caption("🔎Fuente: Asobal via Handball AI")
+st.caption("🔎Data: Asobal via Handball AI")
 
 #Legend
 expander = st.expander("➕ **LEGEND**")
@@ -45,7 +45,7 @@ def round_table_values(df):
     return rounded_df
 df_rounded = round_table_values(dfteams)
 st.write(df_rounded)
-st.caption("🔎Fuente: Asobal via Handball AI")
+st.caption("🔎Data: Asobal via Handball AI")
 
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**Equipo** = Nombre del equipo")
