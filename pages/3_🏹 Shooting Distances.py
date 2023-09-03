@@ -177,7 +177,7 @@ with tab11:
 with tab12:
     st.altair_chart(plotfinalLCOP, use_container_width=True)
 
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Data: Asobal via Handball AI")
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**LxG** = Goles marcados según distancia")
 expander.write("**LxS** = Número total de lanzamientos intentados según distancia")
@@ -418,6 +418,6 @@ with tab23:
 with tab24:
     st.altair_chart(plotfinalCPer, use_container_width=True)
 
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Data: Asobal via Handball AI")
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**LxPTeam** = Porcentaje de acierto en el lanzamiento del equipo según distancia: 6 = 6 metros, 9 = 9 metros, 7 = 7 metros/penalti y C = Contraataque.")
