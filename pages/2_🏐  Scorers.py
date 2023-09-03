@@ -69,7 +69,7 @@ graph = alt.Chart(filtered_data).encode(
 plotfinalpos = graph.mark_bar() + graph.mark_text(align='left', dx=2)
 st.altair_chart(plotfinalpos, use_container_width=True)
 
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Data: Asobal via Handball AI")
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**ToG** = Total Goles Marcados")
 expander.write("**ToS** = Total Lanzamientos Intentados")
