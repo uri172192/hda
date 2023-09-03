@@ -105,7 +105,7 @@ st.write(styled_table_df, unsafe_allow_html=True)
 # Resto del código ...
 
 st.divider()
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Data: Asobal via Handball AI")
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**LxG** = Goles marcados según distancia")
 expander.write("**LxS** = Número total de lanzamientos intentados según distancia")
@@ -199,6 +199,6 @@ st.write(styled_table_df, unsafe_allow_html=True)
 # Resto del código ...
 
 st.divider()
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Data: Asobal via Handball AI")
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**Lx%** = Porcentaje de acierto en el lanzamiento según distancia")
