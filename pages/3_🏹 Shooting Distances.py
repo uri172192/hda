@@ -352,7 +352,7 @@ with tab12:
     st.altair_chart(plotfinalLCOP, use_container_width=True)
 
 #----------------
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Data: Asobal via Handball AI")
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**LxG** = Goles marcados según distancia")
 expander.write("**LxS** = Número total de lanzamientos intentados según distancia")
