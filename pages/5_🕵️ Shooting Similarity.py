@@ -94,7 +94,7 @@ num_players = 5
 
 df_correlatedPlayers = GetSimilarPlayers(selected_player, num_players, corr_matrix)
 st.write(df_correlatedPlayers)
-st.caption("🔎Fuente: Asobal")
+st.caption("🔎Data: Asobal via Handball AI")
 st.caption('🔎Datos correspondientes a la temproada 22-23 de la liga Asobal.')
 
 
