@@ -33,7 +33,6 @@ selected_equipo = st.selectbox('Escoge un equipo:', equipos_temporada)
 # Filtrar los datos nuevamente para mostrar solo el equipo seleccionado
 filtered_data11 = filtered_data1[filtered_data1['Equipo'] == selected_equipo]
 
-
 #Grafic 6m
 chart = alt.Chart(filtered_data11).encode(
     x='L6G',
