@@ -20,8 +20,7 @@ temporadas = pd.concat([df1['Temporada'], df['Temporada']]).unique()
 selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox1")
 
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
-filtered_data1 = df[df['Temporada'] == selected_temporada1].append(df1[df1['Temporada'] == selected_temporada1])
-
+filtered_data1 = pd.concat([df[df['Temporada'] == selected_temporada1], df1[df1['Temporada'] == selected_temporada1]])
 
 
 # Generar una clave única para el widget multiselect
