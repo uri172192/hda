@@ -1,28 +1,37 @@
-
 import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
 
-# Configura el título de la página i favicon
-st.set_page_config(page_title="Players Shooting Performance", page_icon="punteria.png", layout="wide")
-
 # Cargar el DataFrame desde el archivo Excel
 df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
+df1 = pd.read_excel("ModelJugadorsAsobal.xlsx")
+
 
 # Título de la página
 st.title('🎯Players Shooting Performance')
 
 # Título de la sección
-st.subheader('📌Comparador de Jugadores')
+st.header('📌Comparador de Jugadores')
+
+# Obtener una lista de temporadas únicas de ambos DataFrames
+temporadas = pd.concat([df1['Temporada'], df['Temporada']]).unique()
+
+# Crear el select box para la temporada
+selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox1")
+
+# Filtrar los datos según la temporada seleccionada desde ambos DataFrames
+filtered_data1 = df[df['Temporada'] == selected_temporada1].append(df1[df1['Temporada'] == selected_temporada1])
+
+
 
 # Generar una clave única para el widget multiselect
 player_selection_key = "player_selection"
-selected_players = st.multiselect('Selecciona dos jugadores:', df['Jugador'], default=['Dika Mem', 'Antonio García'], key=player_selection_key)
+selected_players = st.multiselect('Selecciona dos jugadores:', filtered_data1['Jugador'], default=['Dika Mem', 'Antonio García'], key=player_selection_key)
 
 # Validación para asegurarse de que se seleccionen exactamente dos jugadores
 if len(selected_players) == 2:
     # Filtrar los datos según los jugadores seleccionados
-    filtered_data = df[df['Jugador'].isin(selected_players)]
+    filtered_data = filtered_data1[filtered_data1['Jugador'].isin(selected_players)]
 
     # Crear el gráfico de radar
     categories = ['L6G', 'L6S', 'L7G', 'L7S', 'L9G', 'L9S', 'LCOG', 'LCOS']
@@ -91,21 +100,17 @@ for col in categories:
         lambda row: f"{row[col]} ⬆️" if row[col] == max_value else row[col],
         axis=1
     )
-# ... Código previo ...
-
-# Aplicar estilo a las celdas con los valores más altos en el DataFrame
-styled_table_df = table_df.style.applymap(
-    lambda x: high_value_style if '⬆️' in str(x) else '',
-    subset=pd.IndexSlice[:, categories]
-)
 
 # Mostrar la tabla con estilos CSS
-st.write(styled_table_df, unsafe_allow_html=True)
+st.markdown(
+    table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render(),
+    unsafe_allow_html=True
+)
 
 # Resto del código ...
 
 st.divider()
-st.caption("🔎Data: Asobal via Handball AI")
+st.caption("🔎Fuente: Asobal")
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**LxG** = Goles marcados según distancia")
 expander.write("**LxS** = Número total de lanzamientos intentados según distancia")
@@ -115,7 +120,7 @@ st.divider()
 # Validación para asegurarse de que se seleccionen exactamente dos jugadores
 if len(selected_players) == 2:
     # Filtrar los datos según los jugadores seleccionados
-    filtered_data = df[df['Jugador'].isin(selected_players)]
+    filtered_data = filtered_data1[filtered_data1['Jugador'].isin(selected_players)]
 
     # Crear el gráfico de radar
     categories = ['L6%', 'L7%', 'L9%', 'LCO%']
@@ -185,20 +190,14 @@ for col in categories:
         lambda row: f"{row[col]} ⬆️" if row[col] == max_value else row[col],
         axis=1
     )
-# ... Código previo ...
-
-# Aplicar estilo a las celdas con los valores más altos en el DataFrame
-styled_table_df = table_df.style.applymap(
-    lambda x: high_value_style if '⬆️' in str(x) else '',
-    subset=pd.IndexSlice[:, categories]
-)
 
 # Mostrar la tabla con estilos CSS
-st.write(styled_table_df, unsafe_allow_html=True)
-
-# Resto del código ...
+st.markdown(
+    table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render(),
+    unsafe_allow_html=True
+)
 
 st.divider()
-st.caption("🔎Data: Asobal via Handball AI")
+st.caption("🔎Fuente: Asobal")
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**Lx%** = Porcentaje de acierto en el lanzamiento según distancia")
