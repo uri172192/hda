@@ -102,7 +102,7 @@ for col in categories:
 
 # Mostrar la tabla con estilos CSS
 st.markdown(
-    table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render(),
+    table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render()
     unsafe_allow_html=True
 )
 
