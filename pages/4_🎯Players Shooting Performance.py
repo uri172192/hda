@@ -106,6 +106,15 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+if isinstance(table_df, pd.DataFrame) and hasattr(table_df, 'style'):
+    # Aplicar el estilo solo si es un DataFrame válido y tiene el atributo 'style'
+    styled_table = table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories])
+    # Luego, renderizar el DataFrame estilizado
+    st.dataframe(styled_table)
+else:
+    # Manejar el caso en el que table_df no sea un DataFrame válido o no tenga estilo
+    st.error("table_df no es un DataFrame válido o no tiene estilo.")
+
 # Resto del código ...
 
 st.divider()
