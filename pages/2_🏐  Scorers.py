@@ -26,7 +26,6 @@ selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="sel
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
 filtered_data1 = pd.concat([df[df['Temporada'] == selected_temporada1], df1[df1['Temporada'] == selected_temporada1]])
 
-
 # Obtener una lista de equipos únicos para la temporada seleccionada
 equipos_temporada = filtered_data1['Equipo'].unique()
 
@@ -68,7 +67,7 @@ st.subheader('📌Consulta todos los goleadores según **posición**:')
 selected_temporada2 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox2")
 
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
-filtered_data2 = df[df['Temporada'] == selected_temporada2].append(df1[df1['Temporada'] == selected_temporada2])
+filtered_data2 = pd.concat([df[df['Temporada'] == selected_temporada2], df1[df1['Temporada'] == selected_temporada2]])
 
 # Obtener una lista de equipos únicos para la temporada seleccionada
 equipos_temporada2 = filtered_data2['Equipo'].unique()
