@@ -195,10 +195,13 @@ for col in categories:
     )
 
 # Mostrar la tabla con estilos CSS
-st.markdown(
-    table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render(),
-    unsafe_allow_html=True
-)
+if isinstance(table_df, pd.DataFrame):
+    # Aplicar estilos al DataFrame
+    styled_table = table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories])
+    # Renderizar el DataFrame estilizado usando st.write
+    st.write(styled_table)
+else:
+    st.error("table_df no es un DataFrame válido.")
 
 st.divider()
 st.caption("🔎Fuente: Asobal")
