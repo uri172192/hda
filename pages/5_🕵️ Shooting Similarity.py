@@ -38,6 +38,7 @@ df.insert(2,'Posicion', df.pop("Posicion"))
 df.drop(columns='Nº', inplace=True)
 df.drop(columns='Equipo', inplace=True)
 df.drop(columns='Posicion', inplace=True)
+df.drop(columns='Temporada', inplace=True)
 
 X, y = df.iloc[:, 1:len(df.columns)].values, df.iloc[:, 0].values
 X_std = StandardScaler().fit_transform(X)
