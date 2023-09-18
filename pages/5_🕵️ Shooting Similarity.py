@@ -11,7 +11,7 @@ import plotly.graph_objects as go
 import altair as alt
 from vega_datasets import data
 #-------------------------------------
-df = pd.read_excel("DataJugadoresAsobal.xlsx")
+df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
 #-------------------------------------
 
 
