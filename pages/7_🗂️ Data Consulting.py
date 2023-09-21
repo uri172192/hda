@@ -11,7 +11,6 @@ st.write('Consulta datos jugadores Asobal:')
 df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
 df1 = pd.read_excel("DataJugadoresAsobal2324.xlsx")
 
-
 # Obtener una lista de temporadas únicas de ambos DataFrames
 temporadas = pd.concat([df1['Temporada'], df['Temporada']]).unique()
 
@@ -19,10 +18,10 @@ temporadas = pd.concat([df1['Temporada'], df['Temporada']]).unique()
 selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox1")
 
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
-filtered_data1 = df[df['Temporada'] == selected_temporada1], (df1[df1['Temporada'] == selected_temporada1])
+filtered_data1 = pd.concat([df[df['Temporada'] == selected_temporada1], df1[df1['Temporada'] == selected_temporada1]])
 
 # Obtener una lista de equipos únicos para la temporada seleccionada
-equipos_temporada = filtered_data1['Equipo']
+equipos_temporada = filtered_data1['Equipo'].unique()
 
 # Crear el select box para el equipo
 selected_equipo = st.selectbox('Escoge un equipo:', equipos_temporada)
