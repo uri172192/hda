@@ -61,13 +61,12 @@ selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="sel
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
 filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1], (dfteams1[dfteams1['Temporada'] == selected_temporada1])
 
-# Verificar si hay datos en el DataFrame resultante
-if not filtered_data1.empty:
-    # Mostrar la tabla resultante en Streamlit
-    st.write("Tabla de datos filtrados:", filtered_data1)
-else:
-    st.write("No hay datos disponibles para la temporada seleccionada.")
-
+def round_table_values(df):
+    # Aplica redondeo a 2 decimales para todas las celdas del DataFrame
+    rounded_df = filtered_data1.round(2)
+    return rounded_df
+df_rounded = round_table_values(filtered_data1)
+st.write(df_rounded)
 
 st.caption("🔎Fuente: Asobal")
 
