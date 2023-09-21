@@ -65,7 +65,7 @@ filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1], (dfteams1
 if not filtered_data1[0].empty:
     # Redondear los valores del DataFrame seleccionado y mostrarlo en Streamlit
     rounded_df1 = filtered_data1[0].round(2)
-    st.write("Tabla de datos filtrados (DataFrame 1):", rounded_df1)
+    st.write("", rounded_df1)
 elif not filtered_data1[1].empty:
     # Redondear los valores del DataFrame seleccionado y mostrarlo en Streamlit
     rounded_df2 = filtered_data1[1].round(2)
