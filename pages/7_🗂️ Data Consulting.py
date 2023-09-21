@@ -62,17 +62,16 @@ selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="sel
 filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1], (dfteams1[dfteams1['Temporada'] == selected_temporada1])
 
 # Verificar si hay datos en el DataFrame resultante
-if not filtered_data1[0].empty or not filtered_data1[1].empty:
-    # Redondear los valores de cada DataFrame por separado
+if not filtered_data1[0].empty:
+    # Redondear los valores del DataFrame seleccionado y mostrarlo en Streamlit
     rounded_df1 = filtered_data1[0].round(2)
-    rounded_df2 = filtered_data1[1].round(2)
-
-    # Mostrar las tablas redondeadas en Streamlit
     st.write("Tabla de datos filtrados (DataFrame 1):", rounded_df1)
+elif not filtered_data1[1].empty:
+    # Redondear los valores del DataFrame seleccionado y mostrarlo en Streamlit
+    rounded_df2 = filtered_data1[1].round(2)
     st.write("Tabla de datos filtrados (DataFrame 2):", rounded_df2)
 else:
     st.write("No hay datos disponibles para la temporada seleccionada.")
-
 st.caption("🔎Fuente: Asobal")
 
 expander = st.expander(" ➕ **LEGEND**")
