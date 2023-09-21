@@ -61,7 +61,12 @@ selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="sel
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
 filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1], (dfteams1[dfteams1['Temporada'] == selected_temporada1])
 
-st.write(filtered_data1).round(2)
+# Verificar si hay datos en el DataFrame resultante
+if not filtered_data1.empty:
+    # Mostrar la tabla resultante en Streamlit
+    st.write("Tabla de datos filtrados:", filtered_data1)
+else:
+    st.write("No hay datos disponibles para la temporada seleccionada.")
 
 
 st.caption("🔎Fuente: Asobal")
