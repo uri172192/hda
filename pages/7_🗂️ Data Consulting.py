@@ -21,7 +21,6 @@ selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="sel
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
 filtered_data1 = df[df['Temporada'] == selected_temporada1], (df1[df1['Temporada'] == selected_temporada1])
 
-
 # Obtener una lista de equipos únicos para la temporada seleccionada
 equipos_temporada = filtered_data1['Equipo'].unique()
 
