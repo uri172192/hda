@@ -60,7 +60,7 @@ temporadas = pd.concat([dfteams1['Temporada'], dfteams['Temporada']]).unique()
 selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox2")
 
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
-filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1].append(dfteams1[dfteams1['Temporada'] == selected_temporada1])
+filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1], (dfteams1[dfteams1['Temporada'] == selected_temporada1])
  
 
 
