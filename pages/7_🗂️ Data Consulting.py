@@ -61,7 +61,7 @@ selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="sel
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
 filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1], (dfteams1[dfteams1['Temporada'] == selected_temporada1])
 
-st.table(filtered_data1)
+st.write(filtered_data1).round(2)
 
 
 st.caption("🔎Fuente: Asobal")
