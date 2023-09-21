@@ -69,7 +69,7 @@ if not filtered_data1[0].empty:
 elif not filtered_data1[1].empty:
     # Redondear los valores del DataFrame seleccionado y mostrarlo en Streamlit
     rounded_df2 = filtered_data1[1].round(2)
-    st.write("Tabla de datos filtrados (DataFrame 2):", rounded_df2)
+    st.write("", rounded_df2)
 else:
     st.write("No hay datos disponibles para la temporada seleccionada.")
 st.caption("🔎Fuente: Asobal")
