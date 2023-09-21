@@ -22,7 +22,7 @@ selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="sel
 filtered_data1 = df[df['Temporada'] == selected_temporada1], (df1[df1['Temporada'] == selected_temporada1])
 
 # Obtener una lista de equipos únicos para la temporada seleccionada
-equipos_temporada = filtered_data1['Equipo'].unique()
+equipos_temporada = filtered_data1['Equipo']
 
 # Crear el select box para el equipo
 selected_equipo = st.selectbox('Escoge un equipo:', equipos_temporada)
