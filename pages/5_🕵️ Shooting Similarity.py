@@ -16,7 +16,6 @@ df1 = pd.read_excel("DataJugadoresAsobal2324.xlsx")
 #-------------------------------------
 #-------------------------------------
 
-
 # Librerías
 
 import pandas as pd
@@ -34,8 +33,8 @@ warnings.filterwarnings(action="ignore")
 #---------------------------------------------------------------------------------------------------------------------------------
 
 #Temporada Actual:
-#Cambiar orden posicion metricas object:
 st.write('Temporada 23-24')
+#Cambiar orden posicion metricas object:
 df1.insert(1,'Jugador', df1.pop("Jugador"))
 df1.insert(2,'Posicion', df1.pop("Posicion"))
 
