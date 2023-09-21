@@ -61,7 +61,13 @@ selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="sel
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
 filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1], (dfteams1[dfteams1['Temporada'] == selected_temporada1])
  
-st.write(filtered_data1).round(2)
+
+def round_table_values(filtered_data1):
+    # Aplica redondeo a 2 decimales para todas las celdas del DataFrame
+    rounded_df = filtered_data1.round(2)
+    return rounded_df
+df_rounded = round_table_values(filtered_data1)
+st.write(df_rounded)
 
 
 st.caption("🔎Fuente: Asobal")
