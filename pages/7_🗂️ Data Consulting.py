@@ -64,7 +64,7 @@ filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1], (dfteams1
 
 def round_table_values(df):
     # Aplica redondeo a 2 decimales para todas las celdas del DataFrame
-    rounded_df = df.round(2)
+    rounded_df = dfteams1.round(2)
     return rounded_df
 df_rounded = round_table_values(filtered_data1)
 st.write(df_rounded)
