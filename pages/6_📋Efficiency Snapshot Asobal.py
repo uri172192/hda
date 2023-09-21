@@ -43,7 +43,7 @@ st.caption("🔎Ratings: Ajustado por 50 posesiones")
 st.divider()
 
 st.subheader('📌Teams Data')
-st.write('Consulta datos equipos Asobal 22-24:')
+st.write('Consulta datos equipos Asobal 23-24:')
 ## Df Load
 dfteams = pd.read_excel("DatasetEquiposAsobal2324.xlsx")
 def round_table_values(df):
