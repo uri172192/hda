@@ -57,10 +57,10 @@ dfteams1 = pd.read_excel("DatasetEquiposAsobal2324.xlsx")
 temporadas = pd.concat([dfteams1['Temporada'], dfteams['Temporada']]).unique()
 
 # Crear el select box para la temporada
-selected_temporada2 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox2")
+selected_temporada1 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox2")
 
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
-filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada2].append(dfteams1[dfteams1['Temporada'] == selected_temporada2])
+filtered_data1 = dfteams[dfteams['Temporada'] == selected_temporada1].append(dfteams1[dfteams1['Temporada'] == selected_temporada1])
  
 
 
