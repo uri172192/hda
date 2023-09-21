@@ -1,16 +1,19 @@
 import streamlit as st
 import pandas as pd
 
+
 # Configura el título de la página i favicon
 st.set_page_config(page_title="Snapshot Asobal", page_icon="clipboard.png", layout="wide")
 st.title("📋Efficiency Snapshot Asobal")
-st.subheader('📌Como han rendido los equipos de la liga Asobal durante la temporada 22-23?')
+st.subheader('📌Como han rendido los equipos de la liga Asobal durante la temporada 23-24?')
 
 import streamlit as st
 import plotly.express as px
 
 # Obtener los datos del dataset iris de Plotly Express
-dfteams = pd.read_excel("DatasetEquiposAsobal.xlsx")
+dfteams = pd.read_excel("DatasetEquiposAsobal2324.xlsx")
+
+
 
 # Redondear los valores a 2 decimales en las columnas "OffRt" y "DefRt"
 dfteams["OffRt"] = dfteams["OffRt"].round(2)
@@ -34,22 +37,22 @@ fig.update_traces(hoverlabel_namelength=0)
 # Mostrar el gráfico en Streamlit
 st.plotly_chart(fig)
 
-st.caption("🔎Data: Asobal via HandballAI")
+st.caption("🔎Fuente: Asobal")
 st.caption("🔎Ratings: Ajustado por 50 posesiones")
 
 st.divider()
 
 st.subheader('📌Teams Data')
-st.write('Consulta datos equipos Asobal 22-23:')
+st.write('Consulta datos equipos Asobal 22-24:')
 ## Df Load
-dfteams = pd.read_excel("DatasetEquiposAsobal.xlsx")
+dfteams = pd.read_excel("DatasetEquiposAsobal2324.xlsx")
 def round_table_values(df):
     # Aplica redondeo a 2 decimales para todas las celdas del DataFrame
     rounded_df = df.round(2)
     return rounded_df
 df_rounded = round_table_values(dfteams)
 st.write(df_rounded)
-st.caption("🔎Data: Asobal via Handball AI")
+st.caption("🔎Fuente: Asobal")
 
 expander = st.expander(" ➕ **LEGEND**")
 expander.write("**Equipo** = Nombre del equipo")
@@ -61,13 +64,10 @@ expander.write("**DefRt** = Defensive Rating, eficiencia defensiva")
 expander.write("**DefRt** = Defensive Rating, eficiencia defensiva")
 expander.write("**OffRt** = Offensive Rating, eficiencia ofensiva")
 expander.write("**NetRt** = Net Rating, diferencia entre eficiencia ofensiva y defensiva")
-expander.write("**Pace** = Ritmo de juego, número de posesiones por partido")
+expander.write("**Pace** = ritmo de juego, número de posesiones por partido")
 expander.write("**LxGTeam** = Nombre goles anotados por un equipo desde una distancia concreta durante la temproada")
 expander.write("**LxSTeam** = Nombre lanzamientos intentados por un equipo desde una distancia concreta durante la temproada")
 expander.write("**LxPTeam** = Porcentaje de acierto en el lanzamiento de un equipo desde una distancia concreta durante la temproada")
-
-
-
 
 
 
