@@ -15,7 +15,7 @@ st.header('🎯Goleadores Asobal')
 st.subheader('📌Consulta todos los goleadores según **equipo**:')
 
 df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
-df1 = pd.read_excel("DataJugadoresAsobal2324.xlsx")
+df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
 
 # Obtener una lista de temporadas únicas de ambos DataFrames
 temporadas = pd.concat([df1['Temporada'], df['Temporada']]).unique()
