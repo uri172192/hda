@@ -6,7 +6,7 @@ st.set_page_config(page_title="Players Shooting Performance", page_icon="punteri
 
 # Cargar el DataFrame desde el archivo Excel
 df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
-df1 = pd.read_excel("DataJugadoresAsobal2324.xlsx")
+df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
 
 
 # Título de la página
