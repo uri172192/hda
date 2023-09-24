@@ -11,7 +11,7 @@ st.set_page_config(page_title="Shooting Distances", page_icon="arrow.png", layou
 st.title('🏹Shooting Distances')
 
 df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
-df1 = pd.read_excel("DataJugadoresAsobal2324.xlsx")
+df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
 
 st.subheader("📌Consulta los datos sobre lanzamientos intentados, anotados y el porcentaje correspondiente a cada jugador, según la distancia del lanzamiento, filtrando por equipo.")
 
