@@ -12,7 +12,7 @@ st.title('🕵️Similitud Jugadores')
 st.subheader('📌Descubre los jugadores más similares entre si respecto a su eficacia en el lanzamiento en la Liga Asobal.')
 #-------------------------------------
 df = pd.read_excel('DatasetJugadoresAsobal.xlsx')
-df1 = pd.read_excel("DataJugadoresAsobal2324.xlsx")
+df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
 #-------------------------------------
 #-------------------------------------
 
