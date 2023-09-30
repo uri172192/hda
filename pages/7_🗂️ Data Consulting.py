@@ -49,7 +49,7 @@ st.divider()
 
 st.subheader('📌Teams Data')
 st.write('Consulta datos equipos Asobal:')
-dfteams = pd.read_excel("DatasetEquiposAsobal.xlsx")
+dfteams = pd.read_excel("DatasetEquiposAsobal2223.xlsx")
 dfteams1 = pd.read_excel("DatasetEquiposAsobal2324.xlsx")
 
 # Obtener una lista de temporadas únicas de ambos DataFrames
