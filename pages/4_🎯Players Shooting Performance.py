@@ -13,7 +13,7 @@ df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
 st.title('🎯Players Shooting Performance')
 
 # Título de la sección
-st.header('📌Comparador de Jugadores')
+st.header('📌Compara el rendimiento de los de jugadores de la Liga Asobal')
 
 # Obtener una lista de temporadas únicas de ambos DataFrames
 temporadas = pd.concat([df1['Temporada'], df['Temporada']]).unique()
