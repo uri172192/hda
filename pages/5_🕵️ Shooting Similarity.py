@@ -115,7 +115,8 @@ if selected_player:
 
     # Display the resulting DataFrame
     st.write(df_correlatedPlayers1)
-
+    
+st.caption("🔎Fuente: Asobal")
 #---------------------------------------------------------------------------------------------------------------------------------
 
 #Temporada Anterior:
@@ -202,7 +203,7 @@ if selected_player:
     st.write(df_correlatedPlayers)
 
 
-st.caption("🔎Data: Asobal")
+st.caption("🔎Fuente: Asobal")
 
 
 #------------------------------------------------------------
