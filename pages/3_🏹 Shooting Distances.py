@@ -384,12 +384,21 @@ expander.write("**Lx%** = Porcentaje de acierto en el lanzamiento según distanc
 st.divider()
 
 dfequipos = pd.read_excel("DatasetEquiposAsobal2324.xlsx")
-
+dfequipos1 = pd.read_excel("DatasetEquiposAsobal2223.xlsx")
 
 st.subheader("📌Consulta los datos sobre el porcentaje de acierto en el lanzamiento de equipo, según la distancia de cada uno.")
 
+# Obtener una lista de temporadas únicas de ambos DataFrames
+temporadas3 = pd.concat([dfequipos['Temporada'], dfequipos1['Temporada']]).unique()
+
+# Crear el select box para la temporada
+selected_temporada3 = st.selectbox('Escoge una temporada:', temporadas3, key="selectbox1")
+
+# Filtrar los datos según la temporada seleccionada desde ambos DataFrames
+filtered_data3 = pd.concat([dfequipos[dfequipos['Temporada'] == selected_temporada3], dfequipos1[dfequipos1['Temporada'] == selected_temporada3]])
+
 #Grafic 6m
-chart = alt.Chart(dfequipos).encode(
+chart = alt.Chart(filtered_data3).encode(
     x='L6PTeam',
     y=alt.Y("Equipo").sort('-x'),
     text='L6PTeam',
@@ -399,7 +408,7 @@ chart = alt.Chart(dfequipos).encode(
 plotfinal6Per = chart.mark_bar() + chart.mark_text(align='left', dx=2)
 
 #Grafic 9m
-chart1 = alt.Chart(dfequipos).encode(
+chart1 = alt.Chart(filtered_data3).encode(
     x='L9PTeam',
     y=alt.Y("Equipo").sort('-x'),
     text='L9PTeam',
@@ -409,7 +418,7 @@ chart1 = alt.Chart(dfequipos).encode(
 plotfinal9Per = chart1.mark_bar(color='firebrick') + chart1.mark_text(align='left', dx=2)
 
 #Grafic 7m
-chart2 = alt.Chart(dfequipos).encode(
+chart2 = alt.Chart(filtered_data3).encode(
     x='L7PTeam',
     y=alt.Y("Equipo").sort('-x'),
     text='L7PTeam',
@@ -419,7 +428,7 @@ chart2 = alt.Chart(dfequipos).encode(
 plotfinal7Per = chart2.mark_bar(color='green') + chart2.mark_text(align='left', dx=2)
 
 #Grafic Contra
-chart3 = alt.Chart(dfequipos).encode(
+chart3 = alt.Chart(filtered_data3).encode(
     x='LCPTeam',
     y=alt.Y("Equipo").sort('-x'),
     text='LCPTeam',
