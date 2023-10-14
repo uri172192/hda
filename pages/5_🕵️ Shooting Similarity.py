@@ -117,6 +117,7 @@ if selected_player:
     st.write(df_correlatedPlayers1)
     
 st.caption("🔎Fuente: Asobal")
+st.divider()
 #---------------------------------------------------------------------------------------------------------------------------------
 
 #Temporada Anterior:
