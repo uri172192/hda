@@ -202,8 +202,7 @@ if selected_player:
     st.write(df_correlatedPlayers)
 
 
-st.caption("🔎Data: Asobal via Handball AI")
-st.caption('🔎Datos correspondientes a la temproada 22-23 de la liga Asobal.')
+st.caption("🔎Data: Asobal")
 
 
 #------------------------------------------------------------
