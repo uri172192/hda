@@ -392,7 +392,7 @@ st.subheader("📌Consulta los datos sobre el porcentaje de acierto en el lanzam
 temporadas3 = pd.concat([dfequipos['Temporada'], dfequipos1['Temporada']]).unique()
 
 # Crear el select box para la temporada
-selected_temporada3 = st.selectbox('Escoge una temporada:', temporadas3, key="selectbox2")
+selected_temporada3 = st.selectbox('Escoge una temporada:', temporadas3, key="selectbox3")
 
 # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
 filtered_data3 = pd.concat([dfequipos[dfequipos['Temporada'] == selected_temporada3], dfequipos1[dfequipos1['Temporada'] == selected_temporada3]])
