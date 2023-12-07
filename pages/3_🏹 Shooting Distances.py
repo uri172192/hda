@@ -196,29 +196,54 @@ st.divider()
 
 st.subheader('📌Consulta todos los goleadores según **posición**:')
 
-# Crear el filtro de temporada para el segundo gráfico en el cuerpo principal
-selected_temporada2 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox2")
+col1, col2 = st.columns(2)
+ 
+with col1:
 
-# Filtrar los datos según la temporada seleccionada desde ambos DataFrames
-filtered_data2 = pd.concat([df[df['Temporada'] == selected_temporada2], df1[df1['Temporada'] == selected_temporada2]])
+    # Crear el filtro de temporada para el segundo gráfico en el cuerpo principal
+    selected_temporada2 = st.selectbox('Escoge una temporada:', temporadas, key="selectbox2")
 
-# Obtener una lista de equipos únicos para la temporada seleccionada
-equipos_temporada2 = filtered_data2['Equipo'].unique()
+    # Filtrar los datos según la temporada seleccionada desde ambos DataFrames
+    filtered_data2 = pd.concat([df[df['Temporada'] == selected_temporada2], df1[df1['Temporada'] == selected_temporada2]])
 
-# Obtener una lista de posiciones únicos para la temporada seleccionada
-pos_temporada = filtered_data2['Posicion'].unique()
+    # Obtener una lista de equipos únicos para la temporada seleccionada
+    equipos_temporada2 = filtered_data2['Equipo'].unique()
 
-# Crear el select box para la posicion
-selected_pos = st.selectbox('Escoge una posicion:', pos_temporada)
+    # Obtener una lista de posiciones únicos para la temporada seleccionada
+    pos_temporada = filtered_data2['Posicion'].unique()
 
-# Filtrar los datos nuevamente para mostrar solo  seleccionado
-filtered_data22 = filtered_data2[filtered_data2['Posicion'] == selected_pos]
+    # Crear el select box para la posicion
+    selected_pos = st.selectbox('Escoge una posicion:', pos_temporada)
+
+    # Filtrar los datos nuevamente para mostrar solo  seleccionado
+    filtered_data22 = filtered_data2[filtered_data2['Posicion'] == selected_pos]
+
+####-------------------------  PROVA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+with col2:
+
+    st.markdown('Filtrado de datos según **lanzamientos intentados y su distancia**:')
+    # Obtener los valores únicos de las variables L
+    variables_L = ['L6', 'L7', 'L9', 'LCO']
+
+    # Widget para seleccionar el tipo de gráfico
+    selected_chart_type = st.radio('Seleccionar distancia de lanzamiento:', variables_L)
+
+    # Añadir un slider solo para el tipo de gráfico seleccionado
+    min_L = filtered_data22[f'{selected_chart_type}S'].min()
+    max_L = filtered_data22[f'{selected_chart_type}S'].max()
+    selected_L = st.slider(f'Seleccionar rango de lanzamientos intentados desde {selected_chart_type}S:', min_L, max_L, (min_L, max_L))
+
+    # Filtrar los datos según el rango seleccionado en el slider
+    filtered_data_L = filtered_data22[(filtered_data22[f'{selected_chart_type}S'] >= selected_L[0]) & (filtered_data22[f'{selected_chart_type}S'] <= selected_L[1])]
+
+#####----------------------------
 
 
 #Gràfics:
 
 #Grafic 6m
-chart = alt.Chart(filtered_data22).encode(
+chart = alt.Chart(filtered_data_L).encode(
     x='L6G',
     y=alt.Y("Jugador").sort('-x'),
     text='L6G',
@@ -228,7 +253,7 @@ chart = alt.Chart(filtered_data22).encode(
 plotfinal6M = chart.mark_bar() + chart.mark_text(align='left', dx=2)
 
 #Grafic 9m
-chart1 = alt.Chart(filtered_data22).encode(
+chart1 = alt.Chart(filtered_data_L).encode(
     x='L9G',
     y=alt.Y("Jugador").sort('-x'),
     text='L9G',
@@ -238,7 +263,7 @@ chart1 = alt.Chart(filtered_data22).encode(
 plotfinal9M = chart1.mark_bar(color='firebrick') + chart1.mark_text(align='left', dx=2)
 
 #Grafic 7m
-chart2 = alt.Chart(filtered_data22).encode(
+chart2 = alt.Chart(filtered_data_L).encode(
     x='L7G',
     y=alt.Y("Jugador").sort('-x'),
     text='L7G',
@@ -249,7 +274,7 @@ plotfinal7M = chart2.mark_bar(color='green') + chart2.mark_text(align='left', dx
 
 #SHOTS TRIED
 #Grafic 6mShots
-chart = alt.Chart(filtered_data22).encode(
+chart = alt.Chart(filtered_data_L).encode(
     x='L6S',
     y=alt.Y("Jugador").sort('-x'),
     text='L6S',
@@ -259,7 +284,7 @@ chart = alt.Chart(filtered_data22).encode(
 plotfinal6S = chart.mark_bar() + chart.mark_text(align='left', dx=2)
 
 #Grafic 9mShots
-chart1 = alt.Chart(filtered_data22).encode(
+chart1 = alt.Chart(filtered_data_L).encode(
     x='L9S',
     y=alt.Y("Jugador").sort('-x'),
     text='L9S',
@@ -269,7 +294,7 @@ chart1 = alt.Chart(filtered_data22).encode(
 plotfinal9S = chart1.mark_bar(color='firebrick') + chart1.mark_text(align='left', dx=2)
 
 #Grafic 7mShots
-chart2 = alt.Chart(filtered_data22).encode(
+chart2 = alt.Chart(filtered_data_L).encode(
     x='L7S',
     y=alt.Y("Jugador").sort('-x'),
     text='L7S',
@@ -280,7 +305,7 @@ plotfinal7S = chart2.mark_bar(color='green') + chart2.mark_text(align='left', dx
 
 #SHOTS %
 #Grafic 6m%
-chart = alt.Chart(filtered_data22).encode(
+chart = alt.Chart(filtered_data_L).encode(
     x='L6%',
     y=alt.Y("Jugador").sort('-x'),
     text='L6%',
@@ -290,7 +315,7 @@ chart = alt.Chart(filtered_data22).encode(
 plotfinal6p = chart.mark_bar() + chart.mark_text(align='left', dx=2)
 
 #Grafic 9mShots
-chart1 = alt.Chart(filtered_data22).encode(
+chart1 = alt.Chart(filtered_data_L).encode(
     x='L9%',
     y=alt.Y("Jugador").sort('-x'),
     text='L9%',
@@ -300,7 +325,7 @@ chart1 = alt.Chart(filtered_data22).encode(
 plotfinal9p = chart1.mark_bar(color='firebrick') + chart1.mark_text(align='left', dx=2)
 
 #Grafic 7mShots
-chart2 = alt.Chart(filtered_data22).encode(
+chart2 = alt.Chart(filtered_data_L).encode(
     x='L7%',
     y=alt.Y("Jugador").sort('-x'),
     text='L7%',
@@ -311,7 +336,7 @@ plotfinal7p = chart2.mark_bar(color='green') + chart2.mark_text(align='left', dx
 
 #SHOTS CONTRAATAC
 #gols
-chart = alt.Chart(filtered_data22).encode(
+chart = alt.Chart(filtered_data_L).encode(
     x='LCOG',
     y=alt.Y("Jugador").sort('-x'),
     text='LCOG',
@@ -321,7 +346,7 @@ chart = alt.Chart(filtered_data22).encode(
 plotfinalLCOG = chart.mark_bar(color='orange') + chart.mark_text(align='left', dx=2)
 
 #intents
-chart1 = alt.Chart(filtered_data22).encode(
+chart1 = alt.Chart(filtered_data_L).encode(
     x='LCOS',
     y=alt.Y("Jugador").sort('-x'),
     text='LCOS',
@@ -332,7 +357,7 @@ plotfinalLCOS = chart1.mark_bar(color='orange') + chart1.mark_text(align='left',
 
 #percentatge
 
-chart2 = alt.Chart(filtered_data22).encode(
+chart2 = alt.Chart(filtered_data_L).encode(
     x='LCO%',
     y=alt.Y("Jugador").sort('-x'),
     text='LCO%',
