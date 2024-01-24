@@ -1,4 +1,5 @@
 import streamlit as st
+from turtle import color, width
 import pandas as pd
 import numpy as np
 from PIL import Image
@@ -34,6 +35,7 @@ def main_page():
 
 def page2():
     import streamlit as st
+    import tkinter as tk
     import pandas as pd
     import numpy as np
     import plotly.express as px
