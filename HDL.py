@@ -1418,9 +1418,9 @@ def gk2():
             polar=dict(
                 radialaxis=dict(
                     visible=True,
-                    range=[0, 180],
-                    tickvals=[50, 100, 150],
-                    ticktext=["50", "100", "150"],
+                    range=[0, 200],
+                    tickvals=[50, 100, 150, 200],
+                    ticktext=["50", "100", "150", "200"],
                     ticks="outside",
                 ),
             ),
