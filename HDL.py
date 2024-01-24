@@ -1455,11 +1455,8 @@ def gk2():
         )
 
     # Mostrar la tabla con estilos CSS
-    st.markdown(
-        table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render(),
-        unsafe_allow_html=True
-    )
-
+    table_df.style.applymap(lambda x: high_value_style if '⬆️' in str(x) else '', subset=pd.IndexSlice[:, categories]).render(), unsafe_allow_html=True
+    
 
     st.divider()
     st.caption("🔎Fuente: Asobal")
