@@ -14,7 +14,6 @@ def main_page():
     from PIL import Image
     
     #-----------------------------------------------
-    st.set_page_config(page_title="HDL", page_icon="favicon-32x32.png", layout="wide")
     
     image = Image.open('HDL-blanc.png')
     st.image(image) 
@@ -43,7 +42,6 @@ def page2():
     
     
     # Configura el título de la página i favicon
-    st.set_page_config(page_title="Scorers", page_icon="ball.png", layout="wide")
     st.title('🏐Scorers')
     st.header('🎯Goleadores Asobal')
     st.subheader('📌Consulta todos los goleadores según **equipo**:')
@@ -147,7 +145,6 @@ def page3():
     from vega_datasets import data
     
     # Configura el título de la página i favicon
-    st.set_page_config(page_title="Shooting Distances", page_icon="arrow.png", layout="wide")
     st.title('🏹Shooting Distances')
     
     df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
@@ -622,8 +619,6 @@ def page4():
     import streamlit as st
     import plotly.graph_objects as go
     
-    st.set_page_config(page_title="Players Shooting Performance", page_icon="punteria.png", layout="wide")
-    
     # Cargar el DataFrame desde el archivo Excel
     df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
     df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
@@ -840,7 +835,6 @@ def page5():
     from vega_datasets import data
     
     # Configura el título de la página i favicon
-    st.set_page_config(page_title="Shooting Similarity", page_icon="detective.png", layout="wide")
     st.title('🕵️Similitud Jugadores')
     st.subheader('📌Descubre los jugadores más similares entre si respecto a su eficacia en el lanzamiento en la Liga Asobal.')
     #-------------------------------------
@@ -1047,7 +1041,6 @@ def page6():
     import pandas as pd
     
     # Configura el título de la página i favicon
-    st.set_page_config(page_title="Data Consulting", page_icon="folder.png", layout="wide")
     st.title("🗂️Data Consulting")
     
     st.subheader('📌Players Data')
