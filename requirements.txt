@@ -9,5 +9,3 @@ plotly
 PCA
 StandardScaler
 openpyxl
-turtle
-tkinter
