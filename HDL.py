@@ -191,14 +191,18 @@ def page3():
     import plotly.graph_objects as go
     import altair as alt
     from vega_datasets import data
+    from PIL import Image
     
-    # Configura el título de la página i favicon
     st.title('🏹Shooting Distances')
-    
-    df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
-    df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
-    
     st.subheader("📌Consulta los datos sobre lanzamientos intentados, anotados y el porcentaje correspondiente a cada jugador, según la distancia del lanzamiento, filtrando por equipo.")
+    
+    left_co, cent_co,last_co = st.columns(3)
+    with cent_co:
+        imageasobal = Image.open('apple-touch-icon.png')
+        st.image(imageasobal)
+    
+    df = pd.read_excel("DatasetJugadoresAsobal2223.xlsx")
+    df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
     
     # Obtener una lista de temporadas únicas de ambos DataFrames
     temporadas = pd.concat([df1['Temporada'], df['Temporada']]).unique()
@@ -666,9 +670,10 @@ def page4():
     import pandas as pd
     import streamlit as st
     import plotly.graph_objects as go
+    from PIL import Image
     
     # Cargar el DataFrame desde el archivo Excel
-    df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
+    df = pd.read_excel("DatasetJugadoresAsobal2223.xlsx")
     df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
     
     
@@ -676,7 +681,12 @@ def page4():
     st.title('🎯Players Shooting Performance')
     
     # Título de la sección
-    st.header('📌Compara el rendimiento de los de jugadores de la Liga Asobal')
+    st.subheader('📌Compara el rendimiento de los de jugadores de la Liga Asobal')
+    
+    left_co, cent_co,last_co = st.columns(3)
+    with cent_co:
+        imageasobal = Image.open('apple-touch-icon.png')
+        st.image(imageasobal)
     
     # Obtener una lista de temporadas únicas de ambos DataFrames
     temporadas = pd.concat([df1['Temporada'], df['Temporada']]).unique()
@@ -881,12 +891,17 @@ def page5():
     import plotly.graph_objects as go
     import altair as alt
     from vega_datasets import data
-    
-    # Configura el título de la página i favicon
+    from PIL import Image
+
     st.title('🕵️Similitud Jugadores')
     st.subheader('📌Descubre los jugadores más similares entre si respecto a su eficacia en el lanzamiento en la Liga Asobal.')
+    left_co, cent_co,last_co = st.columns(3)
+    with cent_co:
+        imageasobal = Image.open('apple-touch-icon.png')
+        st.image(imageasobal)
+    
     #-------------------------------------
-    df = pd.read_excel('DatasetJugadoresAsobal.xlsx')
+    df = pd.read_excel('DatasetJugadoresAsobal2223.xlsx')
     df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
     #-------------------------------------
     #-------------------------------------
@@ -1084,17 +1099,26 @@ def page5():
 
 #------------------------------------------------------------
 
+#------------------------------------------------------------
+
 def page6():
     import streamlit as st
     import pandas as pd
+    from PIL import Image
+
+    col1, col2 = st.columns(2)
+    with col1:
+     st.title("🗂️Data Consulting")
     
-    # Configura el título de la página i favicon
-    st.title("🗂️Data Consulting")
+     st.subheader('📌Players Data')
+     st.write('Consulta datos jugadores Asobal:')
     
-    st.subheader('📌Players Data')
-    st.write('Consulta datos jugadores Asobal:')
+    with col2:
+     image = Image.open('apple-touch-icon.png')
+     st.image(image)
+    
     ## Df Load
-    df = pd.read_excel("DatasetJugadoresAsobal.xlsx")
+    df = pd.read_excel("DatasetJugadoresAsobal2223.xlsx")
     df1 = pd.read_excel("DatasetJugadoresAsobal2324.xlsx")
     
     # Obtener una lista de temporadas únicas de ambos DataFrames
@@ -1130,6 +1154,7 @@ def page6():
     expander.write("**ToS** = Total Lanzamientos Intentados")
     expander.write("**To%** = Porcentaje total de acierto en el lanzamiento")
     expander.write("**L6 (Lanzamientos de 6 metros), L9 (Lanzamientos de 9 metros), L7 (Penaltis), LCO (Lanzamientos de contraataque)** = Siguen el mismo proceso de goles, lanzamientos intentados y porcentaje de acierto según cada distancia o tipo de lanzamiento.")
+    expander.write("**AST** = Total de Asistencias realizadas") 
     
     st.divider()
     
@@ -1165,6 +1190,8 @@ def page6():
     expander.write("**PJ** = Partidos Jugados")
     expander.write("**GF** = Goles a favor")
     expander.write("**GC** = Goles en contra")
+    expander.write("**GFP** = Goles a favor por partido")
+    expander.write("**GCP** = Goles en contra por partido")
     expander.write("**LxGTeam** = Nombre goles anotados por un equipo desde una distancia concreta durante la temproada")
     expander.write("**LxSTeam** = Nombre lanzamientos intentados por un equipo desde una distancia concreta durante la temproada")
     expander.write("**LxPTeam** = Porcentaje de acierto en el lanzamiento de un equipo desde una distancia concreta durante la temproada")
