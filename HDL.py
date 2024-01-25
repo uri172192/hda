@@ -1743,7 +1743,7 @@ image = image.resize((220, 220))  # Ajusta el tamaño como desees
 st.sidebar.image(image)
 
 # Selección del menú
-menu_selection = st.sidebar.selectbox("Selecciona un menú:", ["Asobal Players", "Asobal GK"])
+menu_selection = st.sidebar.selectbox("Selecciona un menú:", ["🤾🏾​Asobal Players", "🧤​Asobal GK"])
 
 # Define un diccionario que mapea las opciones del menú a las funciones correspondientes
 menu_options = {
