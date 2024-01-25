@@ -1463,8 +1463,10 @@ def gk2():
     st.header('🥅Porteros Asobal')
     st.subheader('📌Compara el rendimiento de los porteros de la Liga Asobal:')
 
-    image = Image.open('apple-touch-icon.png')
-    st.image(image)
+    left_co, cent_co,last_co = st.columns(3)
+     with cent_co:
+        imageasobal = Image.open('apple-touch-icon.png')
+        st.image(imageasobal)
     
     df = pd.read_excel("asobalgk2324.xlsx")
 
