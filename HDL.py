@@ -19,14 +19,20 @@ def main_page():
     st.write('📢**Handball Data Lab** se presenta como una aplicación destinada al desarrollo y democratización del análisis de datos en balonmano. La finalidad es ayudar a los usarios a **disfrutar, comprender y compartir los datos sobre el balonmano**.')
         
     st.divider()
-    st.subheader("📌Contenidos HDL")
-    st.write("🏐**Scorers**: visualiza los goleadores según equipo y posición")
-    st.write("🏹**Shooting Distances**: explora los máximos anotadores según la distancia del lanzamiento")
-    st.write("🎯**Players Shooting Performance**: escoge 2 jugadores y compara su rendimiento en el lanzamiento")
-    st.write("🕵️**Shooting Similiraty**: descubre los jugadores similares entre si según su eficacia en el lanzamiento")
-    st.write("🗂️**Data Consulting**: consulta los datos de los que disponemos sobre cada equipo en materia de lanzamientos")
+    expander = st.expander("**📌Contenidos HDL Jugadores Liga Asobal**")
+    expander.write("🏐**Scorers**: visualiza los goleadores según equipo y posición")
+    expander.write("🏹**Shooting Distances**: explora los máximos anotadores según la distancia del lanzamiento")
+    expander.write("🎯**Players Shooting Performance**: escoge 2 jugadores y compara su rendimiento en el lanzamiento")
+    expander.write("🕵️**Shooting Similiraty**: descubre los jugadores similares entre si según su eficacia en el lanzamiento")
+    expander.write("🗂️**Data Consulting**: consulta los datos que disponemos sobre los jugadores de cada equipo")
     st.divider()
-
+    expandergk = st.expander("**📌Contenidos HDL Porteros Liga Asobal**")
+    expandergk.write("**🧱Saves**: visualiza el nivel de paradas de los porteros según equipo")
+    expandergk.write("**🏹​​Saves Distances**: descubre los porteros que más paran según la distancia del lanzamiento")
+    expandergk.write("**🙌​Goalkeepers Saving Performance**: escoge 2 porteros y compara su rendimiento respecto sus paradas")
+    expandergk.write("**🗂️​Data Consulting**: consulta los datos que disponemos sobre los porteros de cada equipo")
+    st.divider()
+    
 def page2():
     import streamlit as st
     import pandas as pd
