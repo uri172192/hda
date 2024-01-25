@@ -1464,7 +1464,7 @@ def gk2():
     st.subheader('📌Compara el rendimiento de los porteros de la Liga Asobal:')
 
     left_co, cent_co,last_co = st.columns(3)
-     with cent_co:
+    with cent_co:
         imageasobal = Image.open('apple-touch-icon.png')
         st.image(imageasobal)
     
