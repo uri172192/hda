@@ -1464,7 +1464,7 @@ def gk2():
     st.subheader('📌Compara el rendimiento de los porteros de la Liga Asobal:')
 
     image = Image.open('apple-touch-icon.png')
-     st.image(image)
+    st.image(image)
     
     df = pd.read_excel("asobalgk2324.xlsx")
 
