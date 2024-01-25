@@ -1453,9 +1453,15 @@ def gk2():
     from vega_datasets import data
     import matplotlib.colors as mcolors
 
+    col1, col2 = st.columns(2)
+    with col1:
+     st.title('​​🙌​Goalkeepers Saving Performance')
+     st.header('🥅Porteros Asobal')
 
-    st.title('​​🙌​Goalkeepers Saving Performance')
-    st.header('🥅Porteros Asobal')
+    with col2:
+     image = Image.open('apple-touch-icon.png')
+     st.image(image)
+        
     st.subheader('📌Compara el rendimiento de los porteros de la Liga Asobal:')
 
     df = pd.read_excel("asobalgk2324.xlsx")
