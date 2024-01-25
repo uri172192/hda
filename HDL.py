@@ -1272,9 +1272,15 @@ def gk1():
     from vega_datasets import data
     import matplotlib.colors as mcolors
 
+    col1, col2 = st.columns(2)
+    with col1:
+     st.title('​🏹​Saves Distances')
+     st.header('🥅Porteros Asobal')
 
-    st.title('​🏹​Saves Distances')
-    st.header('🥅Porteros Asobal')
+    with col2:
+     image = Image.open('apple-touch-icon.png')
+     st.image(image)
+        
     st.subheader('📌Consulta el rendimiento global de los porteros según distancia del lanzamiento:')
 
     df = pd.read_excel("asobalgk2324.xlsx")
@@ -1453,17 +1459,17 @@ def gk2():
     from vega_datasets import data
     import matplotlib.colors as mcolors
 
+    st.title('​​🙌​Goalkeepers Saving Performance')
+    
     col1, col2 = st.columns(2)
     with col1:
-     st.title('​​🙌​Goalkeepers Saving Performance')
      st.header('🥅Porteros Asobal')
-
     with col2:
      image = Image.open('apple-touch-icon.png')
      st.image(image)
         
     st.subheader('📌Compara el rendimiento de los porteros de la Liga Asobal:')
-
+    
     df = pd.read_excel("asobalgk2324.xlsx")
 
     # Verifica los nombres de los jugadores únicos en la columna 'Jugador'
