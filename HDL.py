@@ -1747,8 +1747,8 @@ menu_selection = st.sidebar.selectbox("Selecciona un menú:", ["🤾🏾​Asoba
 
 # Define un diccionario que mapea las opciones del menú a las funciones correspondientes
 menu_options = {
-    "Asobal Players": page_names_to_funcs,
-    "Asobal GK": page_names_GK
+    "🤾🏾​Asobal Players": page_names_to_funcs,
+    "🧤​Asobal GK": page_names_GK
 }
 
 # Verifica si la opción del menú seleccionada está en el diccionario
