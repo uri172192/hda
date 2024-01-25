@@ -1224,8 +1224,15 @@ def gk():
     from vega_datasets import data
     import matplotlib.colors as mcolors
 
-    st.title('​🧱​Saves')
-    st.header('🥅Porteros Asobal')
+    col1, col2 = st.columns(2)
+    with col1:
+     st.title('​🧱​Saves')
+     st.header('🥅Porteros Asobal')
+
+    with col2:
+     image = Image.open('apple-touch-icon.png')
+     st.image(image)
+
     st.subheader('📌Consulta el rendimiento global de los porteros según **equipo**:')
 
     df = pd.read_excel("asobalgk2324.xlsx")
